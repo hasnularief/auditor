@@ -30,7 +30,7 @@ class AuditorController extends Controller
                             if($filters->request_param)
                                 $q->where('request_param', 'like', "%" . $filters->request_param . "%");
                             if($filters->model)
-                                $q->where('model', $filters->model);
+                                $q->where('model', 'like', "%". $filters->model . "%");
                             if($filters->created_at)
                                 $q->where('created_at', 'like', "%" . $filters->created_at . "%");
                         })->paginate($request->per_page);

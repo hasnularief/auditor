@@ -1,8 +1,8 @@
 <?php
 
 namespace Hasnularief\Auditor;
-use Hasnularief\Auditor\Auditor as Model;
-use App\Jobs\SubmitAuditor;
+use Hasnularief\Auditor\Auditor;
+use Hasnularief\Auditor\AuditorJob;
 
 class AuditorObserver
 {
@@ -13,11 +13,13 @@ class AuditorObserver
 
 	public function restored($model)
 	{
+		$request = request();
 		$this->generate($model);
 	}
 
 	public function saved($model)
 	{
+		$request = request();
 		$this->generate($model);
 	}
 
@@ -37,12 +39,10 @@ class AuditorObserver
 			'model'         => json_encode($model->getAttributes(), JSON_HEX_APOS)
 		];
 
-		$now = \Carbon\Carbon::now();
-
 		if(config('auditor.mode') == 'job')
-			SubmitAuditor::dispatch($data);
-		else if(config('auditor.mode') == 'default')
-			Model::create($data);
-
+			AuditorJob::dispatch($data);
+		else if(config('auditor.mode') == 'default'){
+			$a = new Auditor(); $a->fill($data); $a->save();
+		}
 	}
 }

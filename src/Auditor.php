@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Auditor extends Model
 {
-	protected $fillable = ['user_name', 'table_name','request_path', 'request_param', 'model_id', 'model'];
+	public $fillable = ['user_name', 'table_name','request_path', 'request_param', 'model_id', 'model'];
 
 	public function __construct()
 	{

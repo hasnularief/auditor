@@ -9,6 +9,8 @@ trait AuditorTrait {
 	{
 		parent::boot();
 
-		static::observe(new AuditorObserver());
+		$request = request();
+
+		static::observe(new AuditorObserver($request));
 	}
 }

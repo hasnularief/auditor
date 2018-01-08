@@ -14,7 +14,7 @@ class CreateAuditorsTable extends Migration
     public function up()
     {
         Schema::create('auditors', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('user_name')->nullable();
             $table->string('table_name')->nullable();
             $table->string('request_path')->nullable();

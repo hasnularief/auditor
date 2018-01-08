@@ -36,6 +36,6 @@ class AuditorJob implements ShouldQueue
      */
     public function handle()
     {
-       Auditor::create($this->data);
+       $a = new Auditor(); $a->fill($this->data); $a->save();
     }
 }
