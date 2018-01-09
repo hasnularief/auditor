@@ -40,6 +40,6 @@ class User extends Model
     }
 ```
 
-Finally you can access the result in route your-project.dev/auditor
+Finally you can access the result in route `your-project.dev/auditor`
 
-For other configuration you can see in config/auditor.php
+For other configuration you can see in `config/auditor.php`
