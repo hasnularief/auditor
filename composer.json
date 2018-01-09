@@ -11,10 +11,10 @@
     "autoload": {
         "psr-4": {
             "Hasnularief\\Auditor\\": "src/"
-        },
+        }
     },
     "minimum-stability": "dev",
     "require": {
-        "php": ">=5.6.4",
+        "php": ">=5.6.4"
     }
 }
