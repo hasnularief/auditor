@@ -1,6 +1,12 @@
 # Auditor for Laravel
 
-How to use
+## Installation
+
+Require this package with composer:
+
+```shell
+composer require hasnularief/auditor:dev-master
+```
 
 Add packages to autoload and add ServiceProvider to config\app.php
 
@@ -15,6 +21,8 @@ php artisan vendor:publish --tag=auditor
 ```
 
 Auditor will be enabled when `AUDITOR` is `true` in .env
+
+## How to use
 
 Add AuditorTrait to your model and auditor will audit your model when you write data
 ```php
