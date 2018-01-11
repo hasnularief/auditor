@@ -2,8 +2,8 @@
 <html>
 <head>
 	<title>AUDITOR</title>
-	<script src="{{url('plugins/vue.js')}}"></script>
-	<script src="{{url('plugins/axios.min.js')}}"></script>
+	<script src="{{url('vendor/js/vue.js')}}"></script>
+	<script src="{{url('vendor/js/axios.min.js')}}"></script>
 	<style type="text/css">
 		body {font-family: Tahoma; font-size: 11px; } h1, h2, h3, h4, h5, h6 {padding: 2px; margin: 0px; } table {font-size: 11px; border-collapse: collapse; } table tr td {font-family: Tahoma; padding: 2px; } table tr th {font-family: Tahoma; font-weight: bold; background-color: #eee; padding: 2px; } tbody td{vertical-align: top; } tbody p{margin: 0; } pre{ display: block; word-break: break-all; word-wrap: break-word; } input, textarea, select, button { font: 11px Tahoma; }
 	</style>
