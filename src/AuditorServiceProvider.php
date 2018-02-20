@@ -21,6 +21,12 @@ class AuditorServiceProvider extends ServiceProvider
         ], 'auditor');
         
         $this->loadViewsFrom(__DIR__.'/views', 'auditor');
+
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                AuditorClearCommand::class,
+            ]);
+        }
     }
 
     /**
