@@ -2,6 +2,7 @@
 
 namespace Hasnularief\Auditor;
 
+use Carbon\Carbon;
 use Illuminate\Console\Command;
 
 class AuditorClearCommand extends Command
@@ -45,6 +46,7 @@ class AuditorClearCommand extends Command
 
         Auditor::where('created_at', '<', $from)->delete();
         
-        info("Auditor data before {$from} is deleted");
+        info("[AUDITOR] data before {$from} is deleted");
+
     }
 }
