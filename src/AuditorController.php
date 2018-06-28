@@ -10,7 +10,18 @@ class AuditorController extends Controller
 {
     function __construct()
     {
-        $this->middleware(config('auditor.middleware'));
+        $middleware = config('auditor.middleware');
+        if(is_array($middleware)){
+            foreach ($middleware as $m) {
+                $this->middleware($m);
+            }
+        }
+        else
+        {
+            $this->middleware($middleware);    
+        }
+
+        
     }
 
     public function index(Request $request)
@@ -41,7 +52,7 @@ class AuditorController extends Controller
                 return view('hasnularief/auditor/auditor');
             else
                 return view('auditor::auditor');
-        }        	
+        }           
             
     }
 }
