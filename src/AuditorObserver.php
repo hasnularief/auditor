@@ -13,13 +13,11 @@ class AuditorObserver
 
 	public function restored($model)
 	{
-		$request = request();
 		$this->generate($model);
 	}
 
 	public function saved($model)
 	{
-		$request = request();
 		$this->generate($model);
 	}
 
